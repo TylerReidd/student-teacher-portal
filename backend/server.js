@@ -10,6 +10,12 @@ app.use(express.json())
 const assignmentRoutes = require('./routes/assignments');
 app.use('/api/assignments', assignmentRoutes);
 
+const questionRoutes = require('./routes/questions');
+app.use('/api/questions', questionRoutes);
+
+const authRoutes = require('./routes/auth')
+app.use('/api/auth', authRoutes)
+
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
