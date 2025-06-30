@@ -16,6 +16,20 @@ app.use('/api/questions', questionRoutes);
 const authRoutes = require('./routes/auth')
 app.use('/api/auth', authRoutes)
 
+const uploadRoutes = require('./routes/uploads');
+app.use('/api/uploads', uploadRoutes)
+
+const resourceRoutes = require('./routes/resources')
+app.use('/api/resources', resourceRoutes)
+
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
+
+
+
+//static file serve
+app.use('/uploads', express.static('uploads'))
+
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
