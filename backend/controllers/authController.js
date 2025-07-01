@@ -24,6 +24,7 @@ exports.signup = async (req, res) => {
       expiresIn: '1d',
     });
 
+
     res.status(201).json({ token, user: { id: newUser._id, name: newUser.name, role: newUser.role } });
   } catch (err) {
     console.error(err);
